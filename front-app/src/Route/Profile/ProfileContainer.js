@@ -18,7 +18,7 @@ export default class extends Component {
               user: {
                 name: "정보통",
                 totalSupportNum: 13,
-                totalAmout: 320000,
+                totalAmount: 320000,
                 totalSupportOrganizations: 7,
                 badges: ["A", "B"],
                 paymentMethods: ["A"],

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import AccountDetail from "../../Component/AccountDetail";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -45,6 +46,13 @@ const ProfilePresenter = ({ user, loading, error }) => (
       <>
         <Section>
           <Title>내 계정</Title>
+          <AccountDetail
+            name={user.name}
+            totalSupportNum={user.totalSupportNum}
+            totalAmount={user.totalAmount}
+            totalSupportOrganizations={user.totalSupportOrganizations}
+            badges={user.badges}
+          />
         </Section>
         <Section>
           <Title>내 결제수단</Title>
