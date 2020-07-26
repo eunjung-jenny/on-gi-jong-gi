@@ -8,6 +8,7 @@ const Container = styled.article`
   padding: 5px 10px;
   background-color: grey;
   border-radius: 15px;
+  margin-bottom: 10px;
 `;
 
 const Col = styled.div`
