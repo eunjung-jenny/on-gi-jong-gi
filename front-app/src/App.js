@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
+import Home from "./Home";
 import "./App.css";
 
-function App() {
-  return (
-    <Router>
-      <Route path="/" exact={true} render={() => <h1>Home</h1>} />
-    </Router>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Route path="/" exact={true} component={Home} />
+      </Router>
+    );
+  }
 }
+
+export default App;
