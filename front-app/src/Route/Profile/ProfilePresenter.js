@@ -73,8 +73,8 @@ const ProfilePresenter = ({ user, loading, error }) => (
         <Section>
           <Title>내 결제수단</Title>
           <Payments>
-            {user.paymentMethods.map((method) => (
-              <Payment>{method}</Payment>
+            {user.paymentMethods.map((method, idx) => (
+              <Payment key={idx}>{method}</Payment>
             ))}
           </Payments>
         </Section>
