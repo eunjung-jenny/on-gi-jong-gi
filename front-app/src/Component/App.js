@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import Home from "../Route/Home";
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
         <Router>
           <Route path="/" exact={true} component={Home} />
         </Router>
+        <Footer />
       </>
     );
   }
