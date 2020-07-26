@@ -51,6 +51,11 @@ const ProfilePresenter = ({ user, loading, error }) => (
         </Section>
         <Section>
           <Title>즐겨찾는 기관</Title>
+          <MyOrgs>
+            {user.myOrganizations.map((org, idx) => (
+              <MyOrg key={idx}>{org}</MyOrg>
+            ))}
+          </MyOrgs>
         </Section>
         <Section>
           <Title>후원 내역</Title>
