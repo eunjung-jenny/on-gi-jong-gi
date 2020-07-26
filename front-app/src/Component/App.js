@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Home from "../Route/Home";
 import Profile from "../Route/Profile";
+import Item from "../Route/Item";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <Router>
           <Route path="/" exact={true} component={Home} />
           <Route path="/profile" component={Profile} />
+          <Route path="/item" component={Item} />
         </Router>
         <Footer />
       </>
