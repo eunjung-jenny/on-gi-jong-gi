@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import AccountDetail from "../../Component/AccountDetail";
+import SupportDetail from "../../Component/SupportDetail";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -67,6 +68,9 @@ const ProfilePresenter = ({ user, loading, error }) => (
         </Section>
         <Section>
           <Title>후원 내역</Title>
+          {user.supportDetails.map((supportDetail, idx) => (
+            <SupportDetail key={idx} supportDetail={supportDetail} />
+          ))}
         </Section>
       </>
     )}
