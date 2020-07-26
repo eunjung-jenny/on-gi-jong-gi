@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default ({ campaign, myOrganizations, cards, loading, error }) =>
+const HomePresenter = ({ campaign, myOrganizations, cards, loading, error }) =>
   loading ? (
     <h1>로딩중</h1>
   ) : error ? (
@@ -11,3 +12,13 @@ export default ({ campaign, myOrganizations, cards, loading, error }) =>
       /{cards}
     </h1>
   );
+
+HomePresenter.propTypes = {
+  campaign: PropTypes.string,
+  myOrganizations: PropTypes.array,
+  cards: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
+};
+
+export default HomePresenter;
