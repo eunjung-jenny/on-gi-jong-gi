@@ -92,10 +92,6 @@ const HomePresenter = ({
   </Container>
 );
 
-// `${campaign} / ${myOrganizations.map(
-//   (org) => `${org} /`
-// )} ${cards.map((card) => `${card} /`)}`
-
 HomePresenter.propTypes = {
   campaign: PropTypes.string,
   myOrganizations: PropTypes.array,

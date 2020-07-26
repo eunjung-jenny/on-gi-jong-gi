@@ -1,0 +1,69 @@
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const Container = styled.main`
+  margin: 10px 20px;
+  border: 1px solid black;
+  color: black;
+`;
+
+const Section = styled.section`
+  margin-bottom: 10px;
+`;
+
+const Title = styled.div`
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+`;
+
+const MyOrgs = styled.div`
+  display: flex;
+`;
+
+const MyOrg = styled.article`
+  width: 10vw;
+  height: 10vw;
+  background-color: grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-right: 5px;
+`;
+
+const MySupports = styled.div``;
+
+const ProfilePresenter = ({ user, loading, error }) => (
+  <Container>
+    {loading ? (
+      "로딩중"
+    ) : error ? (
+      "에러발생"
+    ) : (
+      <>
+        <Section>
+          <Title>내 계정</Title>
+        </Section>
+        <Section>
+          <Title>내 결제수단</Title>
+        </Section>
+        <Section>
+          <Title>즐겨찾는 기관</Title>
+        </Section>
+        <Section>
+          <Title>후원 내역</Title>
+        </Section>
+      </>
+    )}
+  </Container>
+);
+
+ProfilePresenter.propTypes = {
+  user: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
+};
+
+export default ProfilePresenter;
