@@ -23,7 +23,7 @@ export default class extends Component {
                 badges: ["A", "B"],
                 paymentMethods: ["A"],
                 myOrganizations: ["A", "B", "C"],
-                supportDetails: ["라면1", "라면2", "생수"],
+                supportDetails: ["라면1", "라면2", "생수", "도서"],
               },
             }),
           1000

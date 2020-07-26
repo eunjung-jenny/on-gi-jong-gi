@@ -35,6 +35,21 @@ const MyOrg = styled.article`
   margin-right: 5px;
 `;
 
+const Payments = styled.div`
+  display: flex;
+`;
+
+const Payment = styled.div`
+  background-color: grey;
+  width: 25vw;
+  height: 10vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+`;
+
 const MySupports = styled.div``;
 
 const ProfilePresenter = ({ user, loading, error }) => (
@@ -57,6 +72,11 @@ const ProfilePresenter = ({ user, loading, error }) => (
         </Section>
         <Section>
           <Title>내 결제수단</Title>
+          <Payments>
+            {user.paymentMethods.map((method) => (
+              <Payment>{method}</Payment>
+            ))}
+          </Payments>
         </Section>
         <Section>
           <Title>즐겨찾는 기관</Title>
