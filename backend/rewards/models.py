@@ -10,19 +10,18 @@ class Reward(models.Model):
     success = models.BooleanField(null=True)
 
 class Stuff(models.Model):
-    rewards = models.ForeignKey(
+    rewards = models.ManyToManyField(
         Reward,
-        related_name="stuffs",
-        on_delete=models.CASCADE
+        related_name='rewards_stuff',
     )
-    firms = models.ForeignKey(
+    firm = models.ForeignKey(
         Firm,
-        related_name="stuffs",
+        related_name='firms_stuff',
         on_delete=models.CASCADE
     )
     category = models.CharField(max_length=100)
     price = models.IntegerField()
-    name = models.CharField()
+    name = models.CharField(max_length=100)
     max_volume = models.IntegerField()
     field = models.FloatField()
     imgurl = models.URLField()

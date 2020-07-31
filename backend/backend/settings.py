@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     # my app
     'accounts',
     'rewards',
+    'orders',
+    'cards'
 ]
 
 MIDDLEWARE = [
