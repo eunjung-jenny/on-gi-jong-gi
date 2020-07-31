@@ -1,19 +1,28 @@
 from django.db import models
-from accounts.models import Facility
-from django.core.validators import MinValueValidator
+from accounts.models import Firm
 
-class Reward: 
-    facility = models.ForeignKey(
-        Facility,
-        related_name="rewards",
-        on_delete=models.CASCADE
-    )
+
+class Reward(models.Model):
     title = models.CharField(max_length=100)
-    max_vol = models.IntegerField(
-        validators = [MinValueValidator(1)]
-    )
-    net_price = models.IntegerField(
-        validators = [MinValueValidator(1)]   
-    )
+    max_vol = models.IntegerField()
+    net_price = models.IntegerField()
     expire_date = models.DateTimeField()
     success = models.BooleanField(null=True)
+
+class Stuff(models.Model):
+    rewards = models.ForeignKey(
+        Reward,
+        related_name="stuffs",
+        on_delete=models.CASCADE
+    )
+    firms = models.ForeignKey(
+        Firm,
+        related_name="stuffs",
+        on_delete=models.CASCADE
+    )
+    category = models.CharField(max_length=100)
+    price = models.IntegerField()
+    name = models.CharField()
+    max_volume = models.IntegerField()
+    field = models.FloatField()
+    imgurl = models.URLField()

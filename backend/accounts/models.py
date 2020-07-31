@@ -12,6 +12,7 @@ class Facility(models.Model):
     homepage = models.URLField()
     email = models.EmailField()
     imgurl = models.URLField()
+    created_at = models.DateTimeField(null=True)
 
 class User(AbstractUser):
     email = models.EmailField()
