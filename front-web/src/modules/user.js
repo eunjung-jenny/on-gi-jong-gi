@@ -42,7 +42,7 @@ export function* userSaga() {
 
 const initialState = {
   user: {
-    userId: 1,
+    id: 1,
     userName: 'kenny company',
     userType: 'company',
   },

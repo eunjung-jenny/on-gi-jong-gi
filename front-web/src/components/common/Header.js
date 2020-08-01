@@ -56,7 +56,7 @@ const Header = ({ user, onLogout }) => {
           </Link>
           {user ? (
             <div className="right">
-              <UserInfo>{user.companyName}</UserInfo>
+              <UserInfo>{user.userName}</UserInfo>
               <Button onClick={onLogout}>로그아웃</Button>
             </div>
           ) : (

@@ -2,8 +2,8 @@ import client from './client';
 
 export const readDonator = (id) => client.get(`/api/donators/${id}`);
 
-export const listDonators = ({ userId, userType }) => {
+export const listDonators = ({ id, userType }) => {
   if (userType === 'institution') {
-    return client.get(`/api/donators?${userId}`);
+    return client.get(`/api/donators?${id}`);
   }
 };
