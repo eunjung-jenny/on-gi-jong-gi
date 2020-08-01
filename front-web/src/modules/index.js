@@ -7,8 +7,8 @@ import item, { itemSaga } from './item';
 import items, { itemsSaga } from './items';
 import donation, { donationSaga } from './donation';
 import donations, { donationsSaga } from './donations';
-import donator, { donatorSaga } from './donator';
 import donators, { donatorsSaga } from './donators';
+import create, { createSaga } from './create';
 
 const rootReducer = combineReducers({
   auth,
@@ -18,8 +18,8 @@ const rootReducer = combineReducers({
   items,
   donation,
   donations,
-  donator,
   donators,
+  create,
 });
 
 export function* rootSaga() {
@@ -30,8 +30,8 @@ export function* rootSaga() {
     itemsSaga(),
     donationSaga(),
     donationsSaga(),
-    donatorSaga(),
     donatorsSaga(),
+    createSaga(),
   ]);
 }
 

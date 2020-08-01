@@ -1,6 +1,6 @@
 import client from './client';
 
-export const addItem = (formData) => client.post('/api/items', formData);
+export const createItem = (formData) => client.post('/api/items', formData);
 
 export const readItem = (id) => client.get(`/api/items/${id}`);
 

@@ -42,7 +42,7 @@ const Wrapper = styled(VerticalResponsive)`
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
   return (
     <>
       <SidebarBlock>
@@ -53,12 +53,19 @@ const Sidebar = () => {
           <div>
             <Link to="/item">Items</Link>
           </div>
+          {user.userType === 'company' && (
+            <div>
+              <Link to="/create">New Item</Link>
+            </div>
+          )}
           <div>
             <Link to="/donation">Donations</Link>
           </div>
-          <div>
-            <Link to="/donator">Donators</Link>
-          </div>
+          {user.userType === 'institution' && (
+            <div>
+              <Link to="/donator">Donators</Link>
+            </div>
+          )}
         </Wrapper>
       </SidebarBlock>
     </>

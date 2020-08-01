@@ -46,6 +46,11 @@ const initialState = {
     userName: 'kenny company',
     userType: 'company',
   },
+  // user: {
+  //   id: 2,
+  //   userName: 'unani institution',
+  //   userType: 'institution',
+  // },
   checkError: null,
 };
 

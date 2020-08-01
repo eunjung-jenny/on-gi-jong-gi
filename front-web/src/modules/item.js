@@ -19,6 +19,20 @@ export function* itemSaga() {
 const initialState = {
   item: {
     id: 1,
+    createdAt: '2020-08-01',
+    name: 'example item',
+    category: 'anything',
+    price: 500,
+    volume: 200,
+    donationRatio: 20,
+    image:
+      'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
+    user: {
+      id: 1,
+      userName: 'kenny company',
+      userType: 'company',
+    },
+    donations: [{ id: 1 }, { id: 2 }, { id: 3 }],
   },
   error: null,
 };
