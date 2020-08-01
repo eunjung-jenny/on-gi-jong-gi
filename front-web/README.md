@@ -2,9 +2,9 @@
 
 ## Common
 
-- [ ] Signup
-- [ ] Login
-- [ ] Logout
+- [x] Signup
+- [x] Login
+- [x] Logout
 
 
 
@@ -12,7 +12,7 @@
 
 - [ ] Dashboard
 - [ ] Create Item
-- [ ] Read Item List 
+- [x] Read Item List 
 - [ ] Read Item Detail
 - [ ] Delete Item
 

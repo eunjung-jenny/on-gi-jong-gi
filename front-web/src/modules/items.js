@@ -22,8 +22,11 @@ const initialState = {
     {
       id: 1,
       createdAt: '2020-08-01',
-      title: 'example item',
-      description: 'example item description',
+      name: 'example item',
+      category: 'anything',
+      price: 500,
+      volume: 200,
+      donationRatio: 20,
       image:
         'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
       user: {
@@ -36,8 +39,11 @@ const initialState = {
     {
       id: 2,
       createdAt: '2020-08-01',
-      title: 'example item',
-      description: 'example item description',
+      name: 'example item',
+      category: 'example category',
+      price: 500,
+      volume: 200,
+      donationRatio: 20,
       image:
         'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
       user: {
@@ -50,8 +56,11 @@ const initialState = {
     {
       id: 3,
       createdAt: '2020-08-01',
-      title: 'example item',
-      description: 'example item description',
+      name: 'example item',
+      category: 'example category',
+      price: 500,
+      volume: 200,
+      donationRatio: 20,
       image:
         'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
       user: {

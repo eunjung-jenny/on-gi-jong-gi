@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import Main from '../common/Main';
 import palette from '../../lib/styles/palette';
 
-const ItemListBlock = styled(Main)`
+const DonationListBlock = styled(Main)`
   margin-top: 3rem;
   height: calc(100% - 7rem);
 `;
-const ItemItemBlock = styled.div`
+const DonationItemBlock = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
   &:first-child {
@@ -29,7 +29,6 @@ const ItemItemBlock = styled.div`
     margin-top: 2rem;
   }
 `;
-
 const SubInfo = styled.div`
   color: ${palette.gray[6]};
 
@@ -41,62 +40,58 @@ const SubInfo = styled.div`
   }
 `;
 
-const ItemItem = ({ item }) => {
+const DonationItem = ({ donation }) => {
   const {
     id,
     createdAt,
-    name,
-    category,
-    price,
-    volume,
-    donationRatio,
-    image,
+    item,
     user,
-    donations,
-  } = item;
+    title,
+    targetQuantity,
+    expiresAt,
+    targetReached,
+  } = donation;
   return (
-    <ItemItemBlock>
-      <h2>
-        <Link to={`item/${id}`}>
-          {name.length < 30 ? name : name.slice(0, 30)}
+    <DonationItemBlock>
+      <div>
+        <Link to={`/donation/${id}`}>
+          <h1>{title}</h1>
         </Link>
-      </h2>
+      </div>
       <SubInfo>
         <span>
           <b>{user.userName}</b>
         </span>
         <span>{new Date(createdAt).toLocaleDateString()}</span>
       </SubInfo>
-
-      <img src={image} alt="item"></img>
       <SubInfo>
-        <span>category: {category}</span>
-        <span>unit price: {price}</span>
+        <span>item: {item.name}</span>
+        <span>{item.user.userName}</span>
+        <span>target quantity: {targetQuantity}</span>
       </SubInfo>
       <SubInfo>
-        <span>max volume: {volume}</span>
-        <span>donation: {donationRatio}%</span>
+        <span>expires at: {expiresAt}</span>
+        <span>target reached: {targetReached ? 'true' : 'false'}</span>
       </SubInfo>
-      <p>donations count: {donations.length}</p>
-    </ItemItemBlock>
+    </DonationItemBlock>
   );
 };
 
-const ItemList = ({ items, loading, error }) => {
+const DonationList = ({ donations, loading, error }) => {
   // if (error) {
   //   return <ItemListBlock>에러가 발생했습니다</ItemListBlock>;
   // }
   return (
-    <ItemListBlock>
-      {!loading && items && (
+    <DonationListBlock>
+      {!loading && donations && (
         <div>
-          {items.map((item) => (
-            <ItemItem item={item} key={item.id} />
+          {donations.map((donation) => (
+            <DonationItem donation={donation} key={donation.id} />
           ))}
         </div>
       )}
-    </ItemListBlock>
+    </DonationListBlock>
   );
 };
 
-export default ItemList;
+export default DonationList;
