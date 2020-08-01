@@ -41,7 +41,11 @@ export function* userSaga() {
 }
 
 const initialState = {
-  user: null,
+  user: {
+    userId: 1,
+    userName: 'kenny company',
+    userType: 'company',
+  },
   checkError: null,
 };
 

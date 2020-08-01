@@ -10,7 +10,7 @@ const SidebarBlock = styled.div`
   top: 4rem;
   width: 12rem;
   height: calc(100% - 4rem);
-  background: ${palette.indigo[5]};
+  background: ${palette.teal[5]};
   box-shadow: 2px 4px 2px 0px rgba(0, 0, 0, 0.08);
   display: flex;
   @media (max-width: 768px) {
@@ -20,15 +20,16 @@ const SidebarBlock = styled.div`
 
 const Wrapper = styled(VerticalResponsive)`
   margin-left: 2rem;
-  color: ${palette.indigo[0]};
+  color: ${palette.teal[0]};
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 1.125rem;
-  font-family: 'Gugi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   div {
     transition: color 0.3s linear;
