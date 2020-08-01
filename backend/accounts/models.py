@@ -10,7 +10,7 @@ class Facility(models.Model):
     address1 = models.CharField(max_length=20)
     address2 = models.CharField(max_length=20)
     address3 = models.CharField(max_length=30)
-    type = models.CharField(max_length=20)
+    facility_type = models.CharField(max_length=20)
     homepage = models.URLField()
     email = models.EmailField()
     imgurl = models.URLField()
