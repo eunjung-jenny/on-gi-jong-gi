@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import Card from "../../Component/Card";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -44,18 +46,6 @@ const Cards = styled.div`
   justify-content: space-between;
 `;
 
-const Card = styled.article`
-  box-sizing: border-box;
-  width: 44vw;
-  padding: 15px 10px;
-  background-color: grey;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const HomePresenter = ({
   campaign,
   myOrganizations,
@@ -83,7 +73,7 @@ const HomePresenter = ({
         <Section>
           <Cards>
             {cards.map((card, idx) => (
-              <Card key={idx}>{card}</Card>
+              <Card key={idx} card={card} />
             ))}
           </Cards>
         </Section>
