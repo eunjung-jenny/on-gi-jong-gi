@@ -11,7 +11,8 @@ const DonatorListContainer = ({ match }) => {
       donators: donators.donators,
       error: donators.error,
       loading: loading['donators/LIST_DONATORS'],
-      user: user.user,
+      id: user.user.id,
+      userType: user.user.userType,
     }),
   );
   useEffect(() => {

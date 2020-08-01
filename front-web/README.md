@@ -11,9 +11,8 @@
 ## Company - Side
 
 - [ ] Dashboard
-- [ ] Create Item
+- [x] Create Item
 - [x] Read Item List 
-- [ ] Read Item Detail
 - [ ] Delete Item
 
 
@@ -21,12 +20,10 @@
 ## Institution - Side
 
 - [ ] Dashboard
-- [ ] Read Item List
-- [ ] Read Item Detail
+- [x] Read Item List
 - [ ] Create Donation
-- [ ] Read Donation List
-- [ ] Read Donation Detail
-- [ ] Read Donator List
+- [x] Read Donation List
+- [x] Read Donator List
 
 
 

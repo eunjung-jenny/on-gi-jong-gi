@@ -8,6 +8,7 @@ import ItemListPage from './pages/ItemListPage';
 import DonationListPage from './pages/DonationListPage';
 import DonatorListPage from './pages/DonatorListPage';
 import CreateItemPage from './pages/CreateItemPage';
+import WriteDonationPage from './pages/WriteDonationPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route component={DonationListPage} path={'/donation'} exact />
       <Route component={DonatorListPage} path={'/donator'} exact />
       <Route component={CreateItemPage} path={'/create'} exact />
+      <Route component={WriteDonationPage} path={'/write'} exact />
     </>
   );
 }

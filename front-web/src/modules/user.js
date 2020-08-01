@@ -41,16 +41,16 @@ export function* userSaga() {
 }
 
 const initialState = {
-  user: {
-    id: 1,
-    userName: 'kenny company',
-    userType: 'company',
-  },
   // user: {
-  //   id: 2,
-  //   userName: 'unani institution',
-  //   userType: 'institution',
+  //   id: 1,
+  //   userName: 'kenny company',
+  //   userType: 'company',
   // },
+  user: {
+    id: 2,
+    userName: 'unani institution',
+    userType: 'institution',
+  },
   checkError: null,
 };
 

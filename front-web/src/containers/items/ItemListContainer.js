@@ -11,13 +11,21 @@ const ItemListContainer = ({ match }) => {
       items: items.items,
       error: items.error,
       loading: loading['items/LIST_ITEMS'],
-      user: user.user,
+      id: user.user.id,
+      userType: user.user.userType,
     }),
   );
   useEffect(() => {
     dispatch(listItems({ id, userType }));
   }, [dispatch, id, userType]);
-  return <ItemList loading={loading} error={error} items={items} />;
+  return (
+    <ItemList
+      loading={loading}
+      error={error}
+      items={items}
+      userType={userType}
+    />
+  );
 };
 
 export default withRouter(ItemListContainer);

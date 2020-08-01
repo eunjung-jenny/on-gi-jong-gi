@@ -21,6 +21,8 @@ const ItemItemBlock = styled.div`
     font-size: 2rem;
     margin-bottom: 0;
     margin-top: 0;
+  }
+  a {
     &:hover {
       color: ${palette.gray[6]};
     }
@@ -29,7 +31,6 @@ const ItemItemBlock = styled.div`
     margin-top: 2rem;
   }
 `;
-
 const SubInfo = styled.div`
   color: ${palette.gray[6]};
 
@@ -41,7 +42,7 @@ const SubInfo = styled.div`
   }
 `;
 
-const ItemItem = ({ item }) => {
+const ItemItem = ({ item, userType }) => {
   const {
     id,
     createdAt,
@@ -56,11 +57,14 @@ const ItemItem = ({ item }) => {
   } = item;
   return (
     <ItemItemBlock>
-      <h2>
+      {userType === 'institution' ? (
         <Link to={`item/${id}`}>
-          {name.length < 30 ? name : name.slice(0, 30)}
+          <h2>{name.length < 30 ? name : name.slice(0, 30)}</h2>
+          <b>(click to donation request)</b>
         </Link>
-      </h2>
+      ) : (
+        <h2>{name.length < 30 ? name : name.slice(0, 30)}</h2>
+      )}
       <SubInfo>
         <span>
           <b>{user.userName}</b>
@@ -82,7 +86,7 @@ const ItemItem = ({ item }) => {
   );
 };
 
-const ItemList = ({ items, loading, error }) => {
+const ItemList = ({ items, loading, error, userType }) => {
   // if (error) {
   //   return <ItemListBlock>에러가 발생했습니다</ItemListBlock>;
   // }
@@ -91,7 +95,7 @@ const ItemList = ({ items, loading, error }) => {
       {!loading && items && (
         <div>
           {items.map((item) => (
-            <ItemItem item={item} key={item.id} />
+            <ItemItem item={item} key={item.id} userType={userType} />
           ))}
         </div>
       )}
