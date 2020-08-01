@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -21,6 +22,7 @@ const OrganizationDetailPresenter = ({ organization, loading, error }) => (
         {organization.message}
       </>
     )}
+    <Footer />
   </Container>
 );
 

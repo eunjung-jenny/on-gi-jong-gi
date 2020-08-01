@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import ItemRequestor from "../../Component/ItemRequestor";
+import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -50,6 +51,7 @@ const OrganizationsPresenter = ({ organizations, loading, error }) => (
             <ItemRequestor key={idx} organization={organization} />
           ))}
         </Section>
+        <Footer />
       </>
     )}
   </Container>

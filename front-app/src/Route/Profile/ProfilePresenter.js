@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AccountDetail from "../../Component/AccountDetail";
 import SupportDetail from "../../Component/SupportDetail";
 import MyOrg from "../../Component/Org";
+import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -81,6 +82,7 @@ const ProfilePresenter = ({ user, loading, error }) => (
             <SupportDetail key={idx} supportDetail={supportDetail} />
           ))}
         </Section>
+        <Footer />
       </>
     )}
   </Container>

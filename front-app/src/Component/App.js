@@ -19,7 +19,6 @@ class App extends Component {
           <Route path="/item/:id" component={Item} />
           <Route path="/organizations" exact={true} component={Organizations} />
           <Route path="/organizations/:id" component={OrganizationDetail} />
-          <Footer />
         </Router>
       </>
     );

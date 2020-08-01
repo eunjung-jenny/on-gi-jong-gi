@@ -16,7 +16,7 @@ const Card = styled.article`
 
 export default function ({ card }) {
   return (
-    <Link to="/item">
+    <Link to="/item/1">
       <Card>{card}</Card>
     </Link>
   );
