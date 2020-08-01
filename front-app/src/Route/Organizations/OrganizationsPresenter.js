@@ -46,8 +46,8 @@ const OrganizationsPresenter = ({ organizations, loading, error }) => (
           검색: <Input />
         </Section>
         <Section>
-          {organizations.map((organization) => (
-            <ItemRequestor organization={organization} />
+          {organizations.map((organization, idx) => (
+            <ItemRequestor key={idx} organization={organization} />
           ))}
         </Section>
       </>

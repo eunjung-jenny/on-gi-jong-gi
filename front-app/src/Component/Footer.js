@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Footer = styled.header`
@@ -18,9 +19,15 @@ const Footer = styled.header`
 export default function () {
   return (
     <Footer>
-      <span>홈</span>
-      <span>시설보기</span>
-      <span>프로필</span>
+      <Link to="/">
+        <span>홈</span>
+      </Link>
+      <Link to="/organizations">
+        <span>시설보기</span>
+      </Link>
+      <Link to="/profile">
+        <span>프로필</span>
+      </Link>
     </Footer>
   );
 }
