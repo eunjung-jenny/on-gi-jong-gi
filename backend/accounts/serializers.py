@@ -25,7 +25,7 @@ class FacilitySerializer(serializers.ModelSerializer):
         fields = ['name', 'facility_rewards', 'description', 'address1', 'address2', 'address3', 'facility_type', 'homepage', 'imgurl', 'created_at', 'followings']
 
 # 기업 생성/조회 용
-class FirmCreateSerializer(serializers.ModelSerializer):
+class FirmSerializer(serializers.ModelSerializer):
     class Meta:
         model = Firm
         fields = "__all__"

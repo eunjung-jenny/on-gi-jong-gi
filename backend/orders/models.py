@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from rewards.models import Reward
 from cards.models import Card
-from django.core.validators import MaxValueValidator
 
 class Order(models.Model):
     user = models.ForeignKey(
