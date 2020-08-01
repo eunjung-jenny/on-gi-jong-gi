@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import AccountDetail from "../../Component/AccountDetail";
 import SupportDetail from "../../Component/SupportDetail";
+import MyOrg from "../../Component/Org";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -21,18 +22,6 @@ const Title = styled.div`
 
 const MyOrgs = styled.div`
   display: flex;
-`;
-
-const MyOrg = styled.article`
-  width: 10vw;
-  height: 10vw;
-  background-color: grey;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  margin-right: 5px;
 `;
 
 const Payments = styled.div`
@@ -82,7 +71,7 @@ const ProfilePresenter = ({ user, loading, error }) => (
           <Title>즐겨찾는 기관</Title>
           <MyOrgs>
             {user.myOrganizations.map((org, idx) => (
-              <MyOrg key={idx}>{org}</MyOrg>
+              <MyOrg key={idx} org={org} />
             ))}
           </MyOrgs>
         </Section>

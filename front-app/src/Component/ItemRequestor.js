@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.article`
@@ -33,23 +34,25 @@ const Like = styled.div`
 `;
 
 const ItemRequestor = ({ organization }) => (
-  <Container>
-    <Col>
-      <Name>{organization.name}</Name>
-    </Col>
-    <Col>
-      <Detail>
-        <Col>
-          기관은 {organization.address}에 위치한 {organization.type}입니다.
-        </Col>
-        <Col>...</Col>
-      </Detail>
-      <Like>
-        <Col>현재 {organization.liked}명이 즐겨찾기 등록했습니다.</Col>
-        <Col>❤️</Col>
-      </Like>
-    </Col>
-  </Container>
+  <Link to="/organizations/1">
+    <Container>
+      <Col>
+        <Name>{organization.name}</Name>
+      </Col>
+      <Col>
+        <Detail>
+          <Col>
+            기관은 {organization.address}에 위치한 {organization.type}입니다.
+          </Col>
+          <Col>...</Col>
+        </Detail>
+        <Like>
+          <Col>현재 {organization.liked}명이 즐겨찾기 등록했습니다.</Col>
+          <Col>❤️</Col>
+        </Like>
+      </Col>
+    </Container>
+  </Link>
 );
 
 ItemRequestor.propTypes = {
