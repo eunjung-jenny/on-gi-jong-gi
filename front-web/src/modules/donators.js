@@ -24,12 +24,24 @@ const initialState = {
   donators: [
     {
       id: 1,
+      createdAt: '2020-08-01',
+      userName: 'jenny1',
+      email: 'jenny1@jenny.com',
+      followings: [],
     },
     {
       id: 2,
+      createdAt: '2020-08-01',
+      userName: 'jenny2',
+      email: 'jenny2@jenny.com',
+      followings: [],
     },
     {
       id: 3,
+      createdAt: '2020-08-01',
+      userName: 'jenny3',
+      email: 'jenny3@jenny.com',
+      followings: [],
     },
   ],
   error: null,

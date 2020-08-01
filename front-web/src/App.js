@@ -6,6 +6,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import ItemListPage from './pages/ItemListPage';
 import DonationListPage from './pages/DonationListPage';
+import DonatorListPage from './pages/DonatorListPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route component={LoginPage} path={'/login'} />
       <Route component={ItemListPage} path={'/item'} exact />
       <Route component={DonationListPage} path={'/donation'} exact />
+      <Route component={DonatorListPage} path={'/donator'} exact />
     </>
   );
 }
