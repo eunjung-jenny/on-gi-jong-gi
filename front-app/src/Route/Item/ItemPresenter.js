@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ItemInfo from "../../Component/ItemInfo";
 import ItemRequestor from "../../Component/ItemRequestor";
 import ItemMessage from "../../Component/ItemMessage";
+import DonateBar from "../../Component/DonateBar";
 
 const Container = styled.main`
   margin: 10px 20px;
@@ -48,6 +49,7 @@ const ItemPresenter = ({ item, loading, error }) => (
           물품은 목표 수량을 만족시켰을 때, 판매 기업의 후원 수량을 더하여 대상
           기관으로 배송됩니다.
         </Notice>
+        <DonateBar />
       </>
     )}
   </Container>
