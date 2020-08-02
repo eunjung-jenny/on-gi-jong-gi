@@ -17,10 +17,10 @@ function App() {
       <Route component={SignupPage} path={'/signup'} />
       <Route component={LoginPage} path={'/login'} />
       <Route component={ItemListPage} path={'/item'} exact />
+      <Route component={WriteDonationPage} path={'/item/:id'} />
       <Route component={DonationListPage} path={'/donation'} exact />
       <Route component={DonatorListPage} path={'/donator'} exact />
       <Route component={CreateItemPage} path={'/create'} exact />
-      <Route component={WriteDonationPage} path={'/write'} exact />
     </>
   );
 }

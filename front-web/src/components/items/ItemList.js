@@ -60,7 +60,7 @@ const ItemItem = ({ item, userType }) => {
       {userType === 'institution' ? (
         <Link to={`item/${id}`}>
           <h2>{name.length < 30 ? name : name.slice(0, 30)}</h2>
-          <b>(click to donation request)</b>
+          <b>(click to request a donation)</b>
         </Link>
       ) : (
         <h2>{name.length < 30 ? name : name.slice(0, 30)}</h2>

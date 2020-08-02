@@ -1,6 +1,6 @@
 import client from './client';
 
-export const addDonation = (formData) =>
+export const writeDonation = (formData) =>
   client.post('/api/donations', formData);
 
 export const readDonation = (id) => client.get(`/api/donations/${id}`);

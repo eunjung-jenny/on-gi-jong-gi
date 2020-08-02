@@ -9,6 +9,7 @@ import donation, { donationSaga } from './donation';
 import donations, { donationsSaga } from './donations';
 import donators, { donatorsSaga } from './donators';
 import create, { createSaga } from './create';
+import write, { writeSaga } from './write';
 
 const rootReducer = combineReducers({
   auth,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   donations,
   donators,
   create,
+  write,
 });
 
 export function* rootSaga() {
@@ -32,6 +34,7 @@ export function* rootSaga() {
     donationsSaga(),
     donatorsSaga(),
     createSaga(),
+    writeSaga(),
   ]);
 }
 
