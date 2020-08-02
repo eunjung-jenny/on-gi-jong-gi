@@ -1,14 +1,18 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Facility, Firm
+from cards.serializers import CardSerialiser
 from rewards.serializers import RewardSerializer
+from orders.serializers import OrderSerializer
 
 user = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
+    user_card = CardSerialiser(many=True)
+    user_order = OrderSerializer(many=True)
     class Meta:
         model = user
-        fields = "__all__"
+        fields = ['email', 'nickname', 'user_card', 'follows']
 
 # 시설 생성용
 class FacilityCreateSerializer(serializers.ModelSerializer):

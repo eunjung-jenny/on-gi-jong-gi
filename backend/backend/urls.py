@@ -7,7 +7,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Music API",
+      title="OGJG API",
       default_version='v1',
       description="Test description",
       terms_of_service="https://www.google.com/policies/terms/",
@@ -20,6 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/rewards/', include('rewards.urls')),
     path('api/v1/accounts/', include('accounts.urls')),
+    path('api/v1/orders/', include('orders.urls')),
+    path('api/v1/cards/', include('cards.urls')),
+    path('api/v1/stuffs/', include('stuffs.urls')),
     # rest-auth
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/signup/', include('rest_auth.registration.urls')),

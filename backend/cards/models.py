@@ -13,3 +13,4 @@ class Card(models.Model):
     expire_year = models.IntegerField()
     cvs = models.IntegerField() # hash required
     number = models.CharField(max_length=16) # hash required
+    password = models.CharField(max_length=4) # hash required
