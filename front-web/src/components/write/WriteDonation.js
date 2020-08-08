@@ -2,8 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 const WriteDonationBlock = styled.form`
+  display: flex;
+  /* justify-content: space-around; */
   position: absolute;
   top: 8rem;
   left: 12rem;
@@ -33,6 +37,16 @@ const WriteDonationBlock = styled.form`
         color: ${palette.teal[7]};
         font-weight: bold;
       }
+    }
+  }
+  .write-editor {
+    height: 100%;
+    width: 500px;
+    margin-top: 10rem;
+    .calendar-label {
+      margin-bottom: 1rem;
+      color: ${palette.gray[6]};
+      font-size: 1.125rem;
     }
   }
 
@@ -77,16 +91,15 @@ const StyledButton = styled(Button)`
   }
 `;
 const ItemItemBlock = styled.div`
+  color: ${palette.gray[9]};
   padding-top: 3rem;
   padding-bottom: 3rem;
   &:first-child {
     padding-top: 0;
   }
-  & + & {
-    border-top: 1px solid ${palette.teal[2]};
-  }
   h2 {
-    font-size: 2rem;
+    color: ${palette.gray[9]};
+    font-size: 2.5rem;
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -101,7 +114,7 @@ const ItemItemBlock = styled.div`
 `;
 const SubInfo = styled.div`
   color: ${palette.gray[6]};
-
+  font-size: 1.25rem;
   span + span:before {
     color: ${palette.gray[4]};
     padding-left: 0.25rem;
@@ -125,8 +138,8 @@ const WriteDonation = ({
   const onChangeTargetQuantity = (e) => {
     onChangeField({ key: 'targetQuantity', value: e.target.value });
   };
-  const onChangeExpiresAt = (e) => {
-    onChangeField({ key: 'expiresAt', value: e.target.value });
+  const onChangeExpiresAt = (date) => {
+    onChangeField({ key: 'expiresAt', value: date });
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -136,51 +149,55 @@ const WriteDonation = ({
   return (
     <WriteDonationBlock method="post" onSubmit={onSubmit}>
       <ItemItemBlock>
-        <h2>{item.name}</h2>
         <SubInfo>
+          <h2>{item.name}</h2>
           <span>
             <b>{item.user.userName}</b>
           </span>
           <span>{new Date(item.createdAt).toLocaleDateString()}</span>
         </SubInfo>
-
-        <img src={item.image} alt="item"></img>
+        <img
+          src={item.image}
+          style={{ width: '500px', height: '500px', margin: '1rem' }}
+          alt="item"
+        ></img>
         <SubInfo>
-          <span>category: {item.category}</span>
-          <span>unit price: {item.price}</span>
+          <span>분류: {item.category}</span>
+          <span>가격: {item.price}원</span>
         </SubInfo>
         <SubInfo>
-          <span>max volume: {item.volume}</span>
-          <span>donation: {item.donationRatio}%</span>
+          <span>총 수량: {item.maxVolume}개</span>
+          <span>완료수량: {item.countedVolume}개</span>
+        </SubInfo>
+        <SubInfo>
+          <span>추가 기부비율: {item.donationRatio}%</span>
+          <span>신청된 기부: {item.donations.length}회</span>
         </SubInfo>
       </ItemItemBlock>
-      <StyledInput
-        placeholder="제목을 입력하세요"
-        onChange={onChangeTitle}
-        value={title}
-        name="title"
-      />
-      <StyledInput
-        placeholder="목표수량을 입력하세요"
-        onChange={onChangeTargetQuantity}
-        value={targetQuantity}
-        name="targetQuantity"
-      />
-      <StyledInput
-        placeholder="만료일을 입력하세요"
-        onChange={onChangeExpiresAt}
-        value={expiresAt}
-        name="expiresAt"
-      />
-
-      <WriteActionButtonsBlock>
-        <StyledButton teal type="submit">
-          품목 추가
-        </StyledButton>
-        <StyledButton red onClick={onCancel}>
-          취소
-        </StyledButton>
-      </WriteActionButtonsBlock>
+      <div className="write-editor">
+        <StyledInput
+          placeholder="제목을 입력하세요"
+          onChange={onChangeTitle}
+          value={title}
+          name="title"
+        />
+        <StyledInput
+          placeholder="목표수량을 입력하세요"
+          onChange={onChangeTargetQuantity}
+          value={targetQuantity}
+          name="targetQuantity"
+        />
+        <div className="calendar-label">만료일을 선택하세요</div>
+        <Calendar onChange={onChangeExpiresAt} name="expiresAt" />
+        <WriteActionButtonsBlock>
+          <StyledButton teal type="submit">
+            품목 추가
+          </StyledButton>
+          <StyledButton red onClick={onCancel}>
+            취소
+          </StyledButton>
+        </WriteActionButtonsBlock>
+      </div>
     </WriteDonationBlock>
   );
 };

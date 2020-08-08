@@ -43,12 +43,12 @@ export function* userSaga() {
 const initialState = {
   // user: {
   //   id: 1,
-  //   userName: 'kenny company',
+  //   userName: '주식회사 A식품',
   //   userType: 'company',
   // },
   user: {
     id: 2,
-    userName: 'unani institution',
+    userName: 'B 아동양육기관',
     userType: 'institution',
   },
   checkError: null,
@@ -67,7 +67,7 @@ export default handleActions(
     }),
     [CHECK_FAILURE]: (state, { payload: error }) => ({
       ...state,
-      user: null,
+      // user: null,
       checkError: error,
     }),
     [LOGOUT]: (state) => ({

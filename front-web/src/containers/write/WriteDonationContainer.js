@@ -33,12 +33,7 @@ const WriteDonationContainer = ({ match, history }) => {
       alert('빈칸을 채워주세요');
       return;
     }
-    const formData = new FormData();
-    formData.append('item', item);
-    formData.append('title', title);
-    formData.append('targetQuantity', targetQuantity);
-    formData.append('expiresAt', expiresAt);
-    dispatch(writeDonation(formData));
+    dispatch(writeDonation({ item, title, targetQuantity, expiresAt }));
   };
 
   const onCancel = () => {

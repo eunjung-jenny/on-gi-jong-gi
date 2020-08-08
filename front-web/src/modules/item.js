@@ -20,19 +20,20 @@ const initialState = {
   item: {
     id: 1,
     createdAt: '2020-08-01',
-    name: 'example item',
-    category: 'anything',
-    price: 500,
-    volume: 200,
-    donationRatio: 20,
+    name: '신라면',
+    category: '라면',
+    price: 3000,
+    maxVolume: 400,
+    countedVolume: 200,
+    donationRatio: 10,
     image:
-      'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
+      'https://res.cloudinary.com/kennycld/image/upload/v1596870150/%ED%91%B8%EB%AF%80%EB%A1%9C/%EC%8B%A0%EB%9D%BC%EB%A9%B4_glo1r1.jpg',
     user: {
       id: 1,
-      userName: 'kenny company',
+      userName: '주식회사 A식품',
       userType: 'company',
     },
-    donations: [{ id: 1 }, { id: 2 }, { id: 3 }],
+    donations: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
   },
   error: null,
 };

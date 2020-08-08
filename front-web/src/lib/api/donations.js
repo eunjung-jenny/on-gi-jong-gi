@@ -1,7 +1,13 @@
 import client from './client';
 
-export const writeDonation = (formData) =>
+export const writeDonation = ({ item, title, targetQuantity, expiresAt }) => {
+  const formData = new FormData();
+  formData.append('item', item);
+  formData.append('title', title);
+  formData.append('targetQuantity', targetQuantity);
+  formData.append('expiresAt', expiresAt);
   client.post('/api/donations', formData);
+};
 
 export const readDonation = (id) => client.get(`/api/donations/${id}`);
 

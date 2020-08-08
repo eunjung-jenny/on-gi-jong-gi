@@ -54,9 +54,7 @@ const DonationItem = ({ donation }) => {
   return (
     <DonationItemBlock>
       <div>
-        <Link to={`/donation/${id}`}>
-          <h1>{title}</h1>
-        </Link>
+        <h1>{title}</h1>
       </div>
       <SubInfo>
         <span>
@@ -65,13 +63,13 @@ const DonationItem = ({ donation }) => {
         <span>{new Date(createdAt).toLocaleDateString()}</span>
       </SubInfo>
       <SubInfo>
-        <span>item: {item.name}</span>
-        <span>{item.user.userName}</span>
-        <span>target quantity: {targetQuantity}</span>
+        <span>물품 {item.name}</span>
+        <span>기부회사 {item.user.userName}</span>
+        <span>목표수량: {targetQuantity}개</span>
       </SubInfo>
       <SubInfo>
-        <span>expires at: {expiresAt}</span>
-        <span>target reached: {targetReached ? 'true' : 'false'}</span>
+        <span>만료일자: {expiresAt}</span>
+        <span>목표달성여부: {targetReached ? 'true' : 'false'}</span>
       </SubInfo>
     </DonationItemBlock>
   );
@@ -83,6 +81,7 @@ const DonationList = ({ donations, loading, error }) => {
   // }
   return (
     <DonationListBlock>
+      <h1>기부 목록 ({donations.length})</h1>
       {!loading && donations && (
         <div>
           {donations.map((donation) => (

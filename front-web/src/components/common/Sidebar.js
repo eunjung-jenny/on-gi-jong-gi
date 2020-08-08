@@ -48,22 +48,22 @@ const Sidebar = ({ user }) => {
       <SidebarBlock>
         <Wrapper>
           <div>
-            <Link to="/">Dashboard</Link>
+            <Link to="/">대시보드</Link>
           </div>
           <div>
-            <Link to="/item">Items</Link>
+            <Link to="/item">물품 목록</Link>
           </div>
           {user.userType === 'company' && (
             <div>
-              <Link to="/create">New Item</Link>
+              <Link to="/create">물품 추가</Link>
             </div>
           )}
           <div>
-            <Link to="/donation">Donations</Link>
+            <Link to="/donation">기부 목록</Link>
           </div>
           {user.userType === 'institution' && (
             <div>
-              <Link to="/donator">Donators</Link>
+              <Link to="/donator">기부자 목록</Link>
             </div>
           )}
         </Wrapper>

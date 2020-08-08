@@ -53,62 +53,6 @@ const initialState = {
       expiresAt: '2020-09-01',
       targetReached: false,
     },
-    {
-      id: 2,
-      createdAt: '2020-08-05',
-      item: {
-        id: 1,
-        createdAt: '2020-08-01',
-        name: 'example item',
-        category: 'anything',
-        volume: 200,
-        donationRatio: 20,
-        image:
-          'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
-        user: {
-          id: 1,
-          userName: 'kenny company',
-          userType: 'company',
-        },
-      },
-      user: {
-        id: 2,
-        userName: 'unani institution',
-        userType: 'institution',
-      },
-      title: 'example donation request',
-      targetQuantity: 50,
-      expiresAt: '2020-09-01',
-      targetReached: true,
-    },
-    {
-      id: 3,
-      createdAt: '2020-08-05',
-      item: {
-        id: 1,
-        createdAt: '2020-08-01',
-        name: 'example item',
-        category: 'anything',
-        volume: 200,
-        donationRatio: 20,
-        image:
-          'https://res.cloudinary.com/kennycld/image/upload/v1591271265/animal%20characters/animal_characters05_ifoidc.png',
-        user: {
-          id: 1,
-          userName: 'kenny company',
-          userType: 'company',
-        },
-      },
-      user: {
-        id: 2,
-        userName: 'unani institution',
-        userType: 'institution',
-      },
-      title: 'example donation request',
-      targetQuantity: 50,
-      expiresAt: '2020-09-01',
-      targetReached: false,
-    },
   ],
   error: null,
 };
