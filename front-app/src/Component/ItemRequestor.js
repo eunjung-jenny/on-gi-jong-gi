@@ -62,7 +62,8 @@ const Like = styled.div`
   font-size: 12px;
 `;
 
-const Homepage = styled.a`
+// TODO: 홈페이지로 연결
+const Homepage = styled.span`
   text-decoration: none;
   color: inherit;
 `;
@@ -80,7 +81,7 @@ const ItemRequestor = ({ organization }) => (
         </Col>
         <Col>
           <Homepage href={organization.homepage} target="_blank">
-            <i class="fas fa-home"></i>
+            <i className="fas fa-home"></i>
           </Homepage>
         </Col>
       </Detail>

@@ -51,6 +51,7 @@ const RowRight = styled.div`
 const Col = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 3px;
 `;
 
 const Item = styled.span`
@@ -64,10 +65,12 @@ const Price = styled.span`
 
 const Type = styled.span`
   font-size: 10px;
+  text-align: right;
 `;
 
 const Name = styled.span`
   font-size: 12px;
+  text-align: right;
 `;
 
 const Image = styled.img`
