@@ -6,16 +6,28 @@ import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
-  border: 1px solid black;
   color: white;
+  margin-bottom: 5vh;
 `;
 
 const Section = styled.section`
   margin-bottom: 10px;
 `;
 
+const Title = styled.div`
+  padding-left: 4px;
+  margin-bottom: 2px;
+  font-size: 10px;
+  color: gray;
+`;
+
 const Campaign = styled.article`
-  background-color: grey;
+  background: rgb(255, 49, 0);
+  background: radial-gradient(
+    circle,
+    rgba(255, 49, 0, 1) 50%,
+    rgba(255, 49, 0, 0.79580078125) 100%
+  );
   border-radius: 10px;
   height: 10vh;
   display: flex;
@@ -29,15 +41,38 @@ const MyOrgs = styled.div`
 `;
 
 const MyOrg = styled.article`
-  width: 10vw;
-  height: 10vw;
-  background-color: grey;
-  border-radius: 50%;
+  width: auto;
+  padding: 4px 4px;
+  border: 1px solid #0ca678;
+  color: #0ca678;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
   margin-right: 5px;
+  font-size: 12px;
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Col = styled.div``;
+
+const Button = styled.div`
+  display: inline-block;
+  font-size: 12px;
+  background-color: rgb(64, 64, 64);
+  padding: 4px 8px;
+  border-radius: 6px;
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+  &:last-child {
+    margin-left: auto;
+  }
 `;
 
 const Cards = styled.div`
@@ -64,11 +99,26 @@ const HomePresenter = ({
           <Campaign>{campaign}</Campaign>
         </Section>
         <Section>
+          <Title>내 기관</Title>
           <MyOrgs>
             {myOrganizations.map((myOrg, idx) => (
-              <MyOrg key={idx}>{myOrg}</MyOrg>
+              <MyOrg key={idx}>{myOrg.name}</MyOrg>
             ))}
           </MyOrgs>
+        </Section>
+        <Section>
+          <Row>
+            <Col>
+              <Button>가격순</Button>
+              <Button>마감순</Button>
+              <Button>거리순</Button>
+            </Col>
+            <Col>
+              <Button>
+                <i className="fas fa-filter"></i>
+              </Button>
+            </Col>
+          </Row>
         </Section>
         <Section>
           <Cards>

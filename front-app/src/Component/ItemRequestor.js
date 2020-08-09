@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const handleBackgroundColor = (color) => {
-  switch (color) {
+const handleBackgroundColor = (type) => {
+  switch (type) {
     case "특수교육기관":
       return "#e6fcf5";
     case "노인복지시설":
@@ -25,7 +25,7 @@ const Container = styled.article`
   padding: 5px 10px;
   border-radius: 15px;
   margin-bottom: 10px;
-  background-color: ${({ color }) => handleBackgroundColor(color)};
+  background-color: ${({ type }) => handleBackgroundColor(type)};
 `;
 
 const SLink = styled(Link)`
@@ -69,7 +69,7 @@ const Homepage = styled.a`
 
 const ItemRequestor = ({ organization }) => (
   <SLink to={`/organizations/${organization.id}`}>
-    <Container color={organization.type}>
+    <Container type={organization.type}>
       <Row>
         <Name>{organization.name}</Name>
         <Like>{organization.liked} ❤️</Like>

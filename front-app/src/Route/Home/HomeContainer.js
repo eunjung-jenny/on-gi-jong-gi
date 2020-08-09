@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import HomePresenter from "./HomePresenter";
+import user from "../../data/user";
+import reward from "../../data/reward";
 
 export default class extends Component {
   state = {
@@ -18,8 +20,8 @@ export default class extends Component {
           () =>
             resolve({
               campaign: "COVID 19",
-              myOrganizations: ["A", "B", "C"],
-              cards: ["라면", "물", "도서"],
+              myOrganizations: user.result[0].follow,
+              cards: reward.result,
             }),
           1000
         );
