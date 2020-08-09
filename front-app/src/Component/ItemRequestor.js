@@ -3,13 +3,39 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const handleBackgroundColor = (color) => {
+  switch (color) {
+    case "특수교육기관":
+      return "#e6fcf5";
+    case "노인복지시설":
+      return "#c3fae8";
+    case "아동복지시설":
+      return "#38d9a9";
+    case "장애인복지시설":
+      return "#0ca678";
+    case "요양원":
+      return "#099268";
+    default:
+      return "#087f5b";
+  }
+};
+
 const Container = styled.article`
   box-sizing: border-box;
-  display: flex;
   padding: 5px 10px;
-  background-color: grey;
   border-radius: 15px;
   margin-bottom: 10px;
+  background-color: ${({ color }) => handleBackgroundColor(color)};
+`;
+
+const SLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
+const Row = styled.div`
+  display: felx;
+  justify-content: space-between;
 `;
 
 const Col = styled.div`
@@ -18,41 +44,48 @@ const Col = styled.div`
   }
 `;
 
-const Name = styled.span`
-  font-size: 24px;
+const Name = styled.div`
+  font-size: 16px;
+  margin-bottom: 5px;
 `;
 
 const Detail = styled.div`
   display: felx;
   justify-content: space-between;
-  margin-bottom: 10px;
+  font-size: 12px;
 `;
 
 const Like = styled.div`
   display: felx;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+`;
+
+const Homepage = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;
 
 const ItemRequestor = ({ organization }) => (
-  <Link to="/organizations/1">
-    <Container>
-      <Col>
+  <SLink to={`/organizations/${organization.id}`}>
+    <Container color={organization.type}>
+      <Row>
         <Name>{organization.name}</Name>
-      </Col>
-      <Col>
-        <Detail>
-          <Col>
-            기관은 {organization.address}에 위치한 {organization.type}입니다.
-          </Col>
-          <Col>...</Col>
-        </Detail>
-        <Like>
-          <Col>현재 {organization.liked}명이 즐겨찾기 등록했습니다.</Col>
-          <Col>❤️</Col>
-        </Like>
-      </Col>
+        <Like>{organization.liked} ❤️</Like>
+      </Row>
+      <Detail>
+        <Col>
+          {organization.address1}에 위치한 {organization.type}입니다.
+        </Col>
+        <Col>
+          <Homepage href={organization.homepage} target="_blank">
+            <i class="fas fa-home"></i>
+          </Homepage>
+        </Col>
+      </Detail>
     </Container>
-  </Link>
+  </SLink>
 );
 
 ItemRequestor.propTypes = {
@@ -60,3 +93,5 @@ ItemRequestor.propTypes = {
 };
 
 export default ItemRequestor;
+
+// imgurl
