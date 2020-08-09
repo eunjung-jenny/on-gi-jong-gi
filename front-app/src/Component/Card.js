@@ -5,15 +5,17 @@ import styled from "styled-components";
 const handleBackgroundColor = (item) => {
   switch (item) {
     case "라면":
-      return "#e6fcf5";
+      return "#087f5b";
     case "도서":
-      return "#c3fae8";
+      return "#195f4d";
     case "문구":
-      return "#38d9a9";
+      return "#12b886";
     case "장난감":
       return "#0ca678";
+    case "생수":
+      return "#38d9a9";
     default:
-      return "#087f5b";
+      return "#20c997";
   }
 };
 
