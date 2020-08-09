@@ -10,8 +10,8 @@ const PieChartBlock = styled.div`
 
 const CHART_DATA = {
   columns: [
-    ['data1', 30],
-    ['data2', 120],
+    ['목표 도달', 30],
+    ['목표 미달', 60],
   ],
   type: 'pie',
 };
@@ -24,7 +24,7 @@ const CHART_STYLE = {
 const PieChart = () => {
   return (
     <PieChartBlock>
-      <h1>chart2</h1>
+      <h2>목표수량 도달 비율</h2>
       <BillboardChart data={CHART_DATA} style={CHART_STYLE} />
     </PieChartBlock>
   );

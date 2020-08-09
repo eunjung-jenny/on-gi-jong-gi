@@ -18,8 +18,7 @@ const DonationItemBlock = styled.div`
     border-top: 1px solid ${palette.teal[2]};
   }
   h2 {
-    font-size: 2rem;
-    margin-bottom: 0;
+    font-size: 1.5rem;
     margin-top: 0;
     &:hover {
       color: ${palette.gray[6]};
@@ -54,7 +53,7 @@ const DonationItem = ({ donation }) => {
   return (
     <DonationItemBlock>
       <div>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
       </div>
       <SubInfo>
         <span>
@@ -65,11 +64,14 @@ const DonationItem = ({ donation }) => {
       <SubInfo>
         <span>물품 {item.name}</span>
         <span>기부회사 {item.user.userName}</span>
-        <span>목표수량: {targetQuantity}개</span>
       </SubInfo>
       <SubInfo>
+        <span>목표수량: {targetQuantity}개</span>
         <span>만료일자: {expiresAt}</span>
-        <span>목표달성여부: {targetReached ? 'true' : 'false'}</span>
+      </SubInfo>
+      <SubInfo>
+        <span>기간내 달성시 {item.donationRatio}% 추가 기부가 진행됩니다</span>
+        <span>{targetReached ? '목표수량 도달' : '목표수량 미달'}</span>
       </SubInfo>
     </DonationItemBlock>
   );
