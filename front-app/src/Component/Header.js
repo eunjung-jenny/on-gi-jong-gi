@@ -11,16 +11,20 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
-  background-color: black;
+  background-color: #0ca678;
   color: white;
 `;
 
 export default function () {
   return (
     <Header>
-      <span>햄버거</span>
+      <span>
+        <i className="fas fa-bars"></i>
+      </span>
       <span>푸므로</span>
-      <span>종</span>
+      <span>
+        <i className="fas fa-bell"></i>
+      </span>
     </Header>
   );
 }

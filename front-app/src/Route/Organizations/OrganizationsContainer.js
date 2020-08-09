@@ -13,33 +13,10 @@ export default class extends Component {
     try {
       let organizations;
       const a = new Promise((resolve, reject) =>
-        setTimeout(() => resolve(facility), 1000)
+        setTimeout(() => resolve(facility.result), 1000)
       );
-
-      // const a = new Promise((resolve, reject) => {
-      //   setTimeout(
-      //     () =>
-      //       resolve({
-      //         organizations: [
-      //           {
-      //             name: "A",
-      //             address: "서울시 광진구",
-      //             type: "아동양육시설",
-      //             liked: 137,
-      //           },
-      //           {
-      //             name: "B",
-      //             address: "서울시 동대문구",
-      //             type: "양로원",
-      //             liked: 87,
-      //           },
-      //         ],
-      //       }),
-      //     1000
-      //   );
-      // });
       await a.then((res) => {
-        organizations = res.result;
+        organizations = res;
       });
       this.setState({ organizations });
     } catch {
