@@ -70,9 +70,6 @@ const Button = styled.div`
   &:not(:last-child) {
     margin-right: 2px;
   }
-  &:last-child {
-    margin-left: auto;
-  }
 `;
 
 const Cards = styled.div`

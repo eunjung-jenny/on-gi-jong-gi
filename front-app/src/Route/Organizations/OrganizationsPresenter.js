@@ -6,7 +6,7 @@ import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
-  border: 1px solid black;
+  padding-bottom: 5vh;
   color: black;
 `;
 
@@ -16,16 +16,39 @@ const Section = styled.section`
 
 const Buttons = styled.div`
   display: flex;
+  align-items: center;
 `;
 
-const Button = styled.button`
-  margin-right: 10px;
+const Button = styled.div`
+  display: inline-block;
+  font-size: 12px;
+  background-color: rgb(64, 64, 64);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: white;
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+  &:last-child {
+    margin-left: auto;
+    background-color: transparent;
+    color: rgb(64, 64, 64);
+    font-size: 18px;
+  }
 `;
 
 const Input = styled.input`
   box-sizing: border-box;
-  padding: 5px 5px;
+  padding: 5px 10px;
   font-size: 18px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  color: rgba(0, 0, 0, 0.6);
 `;
 
 const OrganizationsPresenter = ({ organizations, loading, error }) => (
@@ -41,10 +64,13 @@ const OrganizationsPresenter = ({ organizations, loading, error }) => (
             <Button>아동</Button>
             <Button>복지</Button>
             <Button>의료</Button>
+            <Button>
+              <i className="far fa-map"></i>
+            </Button>
           </Buttons>
         </Section>
         <Section>
-          검색: <Input />
+          <Input placeholder="검색어를 입력하세요" />
         </Section>
         <Section>
           {organizations.map((organization, idx) => (
