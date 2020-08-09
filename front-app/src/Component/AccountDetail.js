@@ -16,21 +16,31 @@ const Statistic = styled.div`
   flex-direction: column;
   align-items: center;
   width: 30vw;
+  background-color: #c3fae8;
+  padding: 4px 2px;
+  border-radius: 10px;
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
 `;
 
 const Span = styled.div`
-  margin-bottom: 10px;
+  &:not(:last-cild) {
+    margin-bottom: 10px;
+  }
 `;
 
 const Badge = styled.div`
   width: 10vw;
   height: 10vw;
+  border: 1px solid #0ca678;
+  color: #0ca678;
   border-radius: 50%;
-  background-color: grey;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  font-size: 20px;
 `;
 
 const AccountDetail = ({
@@ -60,9 +70,18 @@ const AccountDetail = ({
     </Section>
     <Span>보유한 배지</Span>
     <Section>
-      {badges.map((badge, idx) => (
+      <Badge>
+        <i className="far fa-smile-wink"></i>
+      </Badge>
+      <Badge>
+        <i className="fas fa-hand-holding-heart"></i>
+      </Badge>
+      <Badge>
+        <i className="far fa-heart"></i>
+      </Badge>
+      {/* {badges.map((badge, idx) => (
         <Badge key={idx}>{badge}</Badge>
-      ))}
+      ))} */}
     </Section>
   </Container>
 );

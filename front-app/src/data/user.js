@@ -172,7 +172,7 @@ export default {
               homepage: "http://stanley.net/",
               imgurl: "https://picsum.photos/200/300",
             },
-            title: "아이들에게 책 한권, 선물하세요",
+            title: "도서",
             max_vol: 59,
             net_price: 5000,
             expire_date: "2020-08-11",

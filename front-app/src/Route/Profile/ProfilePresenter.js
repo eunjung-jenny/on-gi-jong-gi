@@ -8,8 +8,8 @@ import Footer from "../../Component/Footer";
 
 const Container = styled.main`
   margin: 10px 20px;
-  border: 1px solid black;
   color: black;
+  padding-bottom: 5vh;
 `;
 
 const Section = styled.section`
@@ -30,7 +30,8 @@ const Payments = styled.div`
 `;
 
 const Payment = styled.div`
-  background-color: grey;
+  background-color: #20c997;
+  color: white;
   width: 25vw;
   height: 10vw;
   border-radius: 10px;

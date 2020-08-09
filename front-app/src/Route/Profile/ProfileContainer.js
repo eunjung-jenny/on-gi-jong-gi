@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProfilePresenter from "./ProfilePresenter";
+import userData from "../../data/user";
 
 export default class extends Component {
   state = {
@@ -21,9 +22,12 @@ export default class extends Component {
                 totalAmount: 320000,
                 totalSupportOrganizations: 7,
                 badges: ["A", "B"],
-                paymentMethods: ["A"],
-                myOrganizations: ["A", "B", "C"],
-                supportDetails: ["라면1", "라면2", "생수", "도서"],
+                paymentMethods: ["탭탭오"],
+                myOrganizations: [
+                  { id: 3, name: "Sanders-Russo" },
+                  { id: 10, name: "Stephens-Thomas" },
+                ],
+                supportDetails: userData.result[2].order,
               },
             }),
           1000
